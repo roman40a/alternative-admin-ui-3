@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,gBACI,WAAY,CACZ,UACJ,CAEA,EACI,qBAAsB,CACtB,QAAS,CACT,SACJ","file":"main.000b7835.chunk.css","sourcesContent":["html, body, #root {\n    height: 100%;\n    width: 100%;\n}\n\n* {\n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n}\n"]}
