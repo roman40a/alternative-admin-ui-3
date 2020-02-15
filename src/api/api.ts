@@ -6,6 +6,7 @@ export type User = {
 };
 
 export const TOKEN_KEY = 'token';
+const BACK_END_BASE_URL = 'https://soroka-task-manager.herokuapp.com';
 
 const saveTokenToLS = (token: string): void => {
     localStorage.setItem(TOKEN_KEY, token);
@@ -19,13 +20,14 @@ class Api {
 
             const raw = JSON.stringify(data);
 
-            const requestOptions = {
+            const requestOptions: any = {
                 method: 'POST',
                 headers: myHeaders,
                 body: raw,
+                mode: 'no-cors',
             };
 
-            const res = await fetch('/users', requestOptions);
+            const res = await fetch(BACK_END_BASE_URL + '/users', requestOptions);
             const status = res.status;
 
             if (status === 201) {
@@ -47,13 +49,14 @@ class Api {
 
             const raw = JSON.stringify(data);
 
-            const requestOptions = {
+            const requestOptions: any = {
                 method: 'POST',
                 headers: myHeaders,
                 body: raw,
+                mode: 'no-cors',
             };
 
-            const res = await fetch('/users/login', requestOptions);
+            const res = await fetch(BACK_END_BASE_URL + '/users/login', requestOptions);
             const status = res.status;
 
             if (status === 200) {
@@ -78,12 +81,13 @@ class Api {
             myHeaders.append('Content-Type', 'application/json');
             myHeaders.append('Authorization', `Bearer ${token}`);
 
-            const requestOptions = {
+            const requestOptions: any = {
                 method: 'GET',
                 headers: myHeaders,
+                mode: 'no-cors',
             };
 
-            const res = await fetch('/users/me', requestOptions);
+            const res = await fetch(BACK_END_BASE_URL + '/users/me', requestOptions);
             const status = res.status;
 
             if (status === 200) {

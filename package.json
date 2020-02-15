@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn run build",
+    "predeploy": "PUBLIC_URL=/alternative-admin-ui-3 yarn run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -45,6 +45,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "homepage": "https://roman40a.github.io/alternative-admin-ui-3/"
+    "homepage": "https://roman40a.github.io/alternative-admin-ui-3/",
+    "proxy": "https://soroka-task-manager.herokuapp.com/"
   }
 }
